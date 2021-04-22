@@ -1,0 +1,13 @@
+import {TOOGLE_FILTER} from '../actions/types'
+const filterReducer = (state=null,action)=>{
+    switch (action.type) {
+        case TOOGLE_FILTER:
+            return action.payload
+          
+    
+        default:
+            return state
+    }
+}
+
+export default filterReducer

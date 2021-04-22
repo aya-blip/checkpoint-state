@@ -38,14 +38,18 @@
 }
 
   .box {
-    background-color: rgb(194, 185, 185);
-    width: 300px;
-    border: 15px solid rgb(255, 201, 246);
-    padding: 50px;
-    margin: 20px;
+    width: 350px;
+    border: 1px solid rgb(248, 245, 245);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 40px;
+    font-family: cursive;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    background-color: rgb(211, 193, 233);
     position: relative;
-    left:450px;
-    top:200px;
+    left: 500px;
   }
 .count {
   position: relative;
@@ -82,4 +86,106 @@
   to {
     transform: rotate(360deg);
   }
+}
+.btn1 {
+  background-color: #fff9fc;
+  border: solid rgb(248, 151, 171);
+  color: rgb(8, 8, 8);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 30px;
+  width: 100px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: cursive;
+  position: relative;
+  left: 500px;
+  top: 20px;
+}
+.btn1:hover { 
+  background-color: rgb(248, 151, 171); 
+  color: white; 
+  pointer-events: painted;
+ } 
+ .btn2 {
+  background-color: #fff9fc;
+  border: solid rgb(165, 155, 209);
+  color: rgb(8, 8, 8);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 30px;
+  width: 130px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: cursive;
+  position: relative;
+  left: 500px;
+  top: 20px;
+}
+.btn2:hover { 
+  background-color:rgb(165, 155, 209) ; 
+  color: white; 
+ } 
+ .btn3 {
+  background-color: #fff9fc;
+  border: solid rgb(136, 212, 180);
+  color: rgb(8, 8, 8);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 30px;
+  width: 150px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: cursive;
+  position: relative;
+  left: 500px;
+  top: 20px;
+}
+.btn3:hover { 
+  background-color:rgb(136, 212, 180) ; 
+  color: white; 
+ } 
+ .x{
+  width: 200px;
+  height: 40px;
+   position: relative;
+   left: 10px;
+   
+   background-color: antiquewhite;
+   border: rgb(5, 5, 5);
+   font-size: 15px;
+   position: relative;
+   bottom: 40px;
+ }
+ .y{
+  width: 50px;
+  height: 44.5px;
+  position: relative;
+  left: 5px;
+  bottom: 41px;
+  border-radius: 4px;
+  background-color: white;
+  font-family: cursive;
+  font-weight: 600;
+ }
+ .a{
+background-color: rgb(211, 193, 233);
+color: rgb(255, 143, 143);
+border: 2px rgb(211, 193, 233);
+width: 50px;
+height: 50px;
+font-size: 34px;
+
+ }
+ .a:hover {
+  cursor: pointer;
 }

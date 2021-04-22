@@ -1,48 +1,49 @@
 
-import './App.css';
-import React, { Component } from 'react'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "./actions/todoActions";
+import TodoList from "./TodoList";
+import { v4 } from "uuid";
+import { toggleFilter } from "./actions/filterActions";
 
- class App extends Component {
-   constructor(props){
-     super(props)
-     this.state={
+const App = () => {
+  const dispatch = useDispatch();
+  const [newTodo, setNewTodo] = useState({
+    id: v4(),
+    desc: "",
+    isDone: false,
+  });
+  const filter = useSelector(state => state.filterReducer)
+  console.log(filter)
+  const todos = useSelector((state) => state.todoReducer);
 
-      fullName:'Aya Rjiba',
-      bio:'Thank God it’s Friday',
-      profession:'Financier',
-      imgSrc:<img src="/img.PNG" alt="myimage" />,
-      show:false,
-     count:0
-     }
-   }
-   componentDidMount=()=>{
-     setInterval ( ()=>{
-       this.setState({count:this.state.count+1})
-     },1000)
-
-     }
-     componentWillUnmount=()=>{
-
-     }
-   
-   showName=()=>{
-
-    this.setState({show:!this.state.show})
-   }
-  render() {
-    return (
+  const handleSave = () => {
+    dispatch(addTodo(newTodo));
+    setNewTodo({
+      id: v4(),
+      desc: "",
+      isDone: false,
+    });
+  };
+  return (
+    <div>
       <div>
-        { this.state.show ? <h2 className='img'>{this.state.imgSrc}</h2>:null}
-       { this.state.show ? <h1 className='a'> {this.state.fullName}</h1> :null}
-       { this.state.show ? <h2 className='bio'>{ this.state.bio}</h2> :null}
-       { this.state.show ? <h2 className='prof'>   {this.state.profession}</h2>:null}
-        
-       <button className='btn' onClick={this.showName}>Show Me</button>
-       <h3 className='count'> {this.state.count} </h3>
+        <button   className="btn1" onClick={()=>dispatch(toggleFilter(null))}>ALL</button>
+        <button  className="btn2" onClick={()=>dispatch(toggleFilter(true))}>DONE</button>
+        <button className="btn3" onClick={()=>dispatch(toggleFilter(false))}>UNDONE</button>
       </div>
-    )
-  }
-}
+      <div>
+        <input  className='x'
+          type="text"
+          placeholder="Add Task Here"
+          value={newTodo.desc}
+          onChange={(e) => setNewTodo({ ...newTodo, desc: e.target.value })}
+        ></input >{" "}
+        <button className='y' onClick={handleSave}>ADD</button>
+      </div>
+      <TodoList todos={filter===null? todos:todos.filter(el=>el.isDone===filter)}></TodoList>
+    </div>
+  );
+};
 
-export default App
-
+export default App;
